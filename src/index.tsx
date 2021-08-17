@@ -6,10 +6,10 @@ import './index.css';
 import {ContactContextProvider} from './components/Contact-Context';
 
 ReactDOM.render(
-  <ContactContextProvider>
     <BrowserRouter>
+    <ContactContextProvider>
       <App/>
-    </BrowserRouter>
-  </ContactContextProvider>,
+    </ContactContextProvider>
+    </BrowserRouter>,
   document.getElementById('root')
 );

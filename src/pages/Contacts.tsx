@@ -1,9 +1,10 @@
 import {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 
 import ContactList from '../components/contacts/ContactList';
 import FetchAll from '../components/functions/FetchAll';
 import HomePage from './Home';
-import NewContact from './NewContact';
+// import NewContact from './NewContact';
 
 function ContactPage(){
     const [isLoading, setIsLoading] = useState(true);
@@ -27,7 +28,7 @@ function ContactPage(){
     return(
         <section>
             <h1>Contacts</h1>
-            <button onClick={NewContact}>Plus Sign</button>
+            <Link to="/newContact">Plus Sign</Link>
             <ContactList contacts={loadedContacts}/>
             <HomePage firstContact={loadedContacts}/>
         </section>

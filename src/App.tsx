@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route} from 'react-router-dom';
 
 import ContactsPage from './pages/Contacts';
-// import HomePage from './pages/Home';
+import NewContactPage from './pages/NewContact';
 
 function App() {
   return (
@@ -10,15 +10,13 @@ function App() {
       <Switch>
       <Route path='/' exact>
         <ContactsPage/>
-        
       </Route>
       <Route path='/contacts' exact>
         <ContactsPage/>
-        
       </Route>
-      <Route path='/contacts/*' exact>
+      <Route path='/newContact' exact>
         <ContactsPage/>
-        
+        <NewContactPage/>
       </Route>
       </Switch>
     </div>

@@ -1,31 +1,30 @@
 import {useHistory} from 'react-router-dom';
-import NewContactForm from '../components/home/NewContactForm';
+import NewContactForm from '../components/contacts/NewContactForm';
 
-function NewContactPage(props:any){
+function NewContactPage(){
     const history = useHistory();
 
-    function newContactHandler(loginData: any){
+    function newContactHandler(newContactData: any){
         fetch(
             'https://avb-contacts-api.herokuapp.com/contacts',
             {
                 method: "POST",
-                body: JSON.stringify(loginData),
+                body: JSON.stringify(newContactData),
                 headers: {
                     "Content-Type": "application/json"
                 }
             }
         )
-        .then(response => response.json())
-        .then(data => {
-            history.replace("/contacts")
+        .then(() => {
+            history.replace("/")
         })
     };
 
     return (
         <section>
-            <h1>Add New Contact</h1>
-            <NewContactForm onLogin={newContactHandler} />
-    </section>
+            <h1>New Contact</h1>
+            <NewContactForm onNewContact={newContactHandler} />
+        </section>
     );
 }
 

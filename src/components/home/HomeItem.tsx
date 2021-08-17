@@ -1,8 +1,5 @@
-import react from 'react';
 
 function HomeItem(props:any){
-
-    console.log("HomeItem: " + JSON.stringify(props));
 
     return(
         <section>
