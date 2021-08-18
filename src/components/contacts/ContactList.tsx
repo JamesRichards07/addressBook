@@ -15,9 +15,9 @@ function ContactList(props:any){
                     emails={contact.emails}
                 />
                 );
-            })};
+            })}
         </ul>
-    )
+    );
 }
 
 export default ContactList;

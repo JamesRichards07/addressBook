@@ -3,8 +3,11 @@ import {Link} from 'react-router-dom';
 
 import ContactList from '../components/contacts/ContactList';
 import FetchAll from '../components/functions/FetchAll';
+import Home from '../components/home/Home';
+// import NewContact from './NewContact'
 
-function ContactPage(){
+
+function MainPage(){
     const [isLoading, setIsLoading] = useState(true);
     const [loadedContacts, setLoadedContacts] = useState([]);
 
@@ -26,10 +29,11 @@ function ContactPage(){
     return(
         <section>
             <h1>Contacts</h1>
-            <Link to="/contacts/edit/newContact">Plus Sign</Link>
+            <Link to="/Contacts/edit/newContact">Plus Sign</Link>
             <ContactList contacts={loadedContacts}/>
+            <Home firstContact={loadedContacts}/>
         </section>
     );
 };
 
-export default ContactPage;
+export default MainPage;

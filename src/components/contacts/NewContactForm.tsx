@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { Link } from 'react-router-dom';
 
 function NewContactForm(props: any){
     // const [email, setEmail] = useState<string[]>([]);
@@ -70,7 +71,7 @@ function NewContactForm(props: any){
             </div> */}
             <div>
                 <button>Save</button>
-                {/* <button>Cancel</button> */}
+                <Link to="/">Cancel</Link>
             </div>
         </form>
     ) 
