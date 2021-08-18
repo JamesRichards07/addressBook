@@ -10,7 +10,7 @@ function ContactItem(props:any){
     
     function SelectedContactHandler(props:any){
         contactCtx.replaceContact(props);
-        history.replace('/');
+        history.replace('/contacts');
     }
 
     return(

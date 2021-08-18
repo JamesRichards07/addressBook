@@ -7,7 +7,7 @@ import HomeItem from './HomeItem';
 function HomePage(props: any){
     const contactCtx = useContext(ContactContext);
 
-    let content;
+    let content; 
 
     if(contactCtx.contact.length === 0){
         content = <HomeItem contact={props.firstContact[0]}/>;
@@ -17,28 +17,13 @@ function HomePage(props: any){
         content = <HomeItem contact={contactCtx.contact}/>
     }
     
-    // function DeleteContact(contact:any){
-    //     const id = contact.id;
-    //     const url = 'https://avb-contacts-api.herokuapp.com/contacts/' + id;
-
-    //     console.log(url);
-    
-    //     fetch(
-    //         url, 
-    //         {
-    //             method:"DELETE"
-    //         }
-    //     )
-    //     .then(() => {
-    //         history.replace("/");
-    //     });
-    // }
-
     return(
         <section>
             <h1>Home Page</h1>
             {content}
-            <button>Edit</button>
+            <Link to="/contacts/edit/updateContact">
+                Edit
+            </Link>
             <Link to='/contacts/edit/deleteContact'>
                 Delete
             </Link>

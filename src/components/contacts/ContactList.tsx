@@ -1,7 +1,6 @@
 import ContactItem from './ContactItem';
 
 function ContactList(props:any){
-    // console.log("ContactPage props: " + JSON.stringify(props.contacts));
 
     return (
         <ul>

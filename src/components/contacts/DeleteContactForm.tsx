@@ -3,7 +3,7 @@ import {useContext} from 'react';
 
 import ContactContext from "../Contact-Context";
 
-function ContactDeletionForm(props: any){
+function DeleteContactForm(props: any){
 
     const contactCtx = useContext(ContactContext);
     const contact = contactCtx.contact;
@@ -23,4 +23,4 @@ function ContactDeletionForm(props: any){
     )
 }
 
-export default ContactDeletionForm;
+export default DeleteContactForm;

@@ -5,6 +5,7 @@ import ContactsPage from './pages/Contacts';
 import NewContactPage from './pages/NewContact';
 import MainPage from './pages/Main';
 import DeleteContactPage from './pages/DeleteContact';
+import UpdateContactPage from './pages/UpdateContact';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <MainPage/>
       </Route>
       <Route path='/contacts' exact>
-        <ContactsPage/>
+        <MainPage/>
       </Route>
       <Route path='/contacts/edit/newContact' exact>
         <ContactsPage/>
@@ -23,6 +24,10 @@ function App() {
       <Route path='/contacts/edit/deleteContact' exact>
         <ContactsPage/>
         <DeleteContactPage/>
+      </Route>
+      <Route path='/contacts/edit/updateContact' exact>
+        <ContactsPage/>
+        <UpdateContactPage/>
       </Route>
       </Switch>
     </div>

@@ -4,14 +4,13 @@ import {Link} from 'react-router-dom';
 import ContactList from '../components/contacts/ContactList';
 import FetchAll from '../components/functions/FetchAll';
 import Home from '../components/home/Home';
-// import NewContact from './NewContact'
-
 
 function MainPage(){
     const [isLoading, setIsLoading] = useState(true);
     const [loadedContacts, setLoadedContacts] = useState([]);
 
     useEffect(() => {
+        console.log("use effect");
         setIsLoading(true);
         const url = 'https://avb-contacts-api.herokuapp.com/contacts/paginated';
 

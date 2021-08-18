@@ -1,3 +1,4 @@
+import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
 
@@ -6,10 +7,10 @@ import './index.css';
 import {ContactContextProvider} from './components/Contact-Context';
 
 ReactDOM.render(
+  <ContactContextProvider>
     <BrowserRouter>
-    <ContactContextProvider>
       <App/>
-    </ContactContextProvider>
-    </BrowserRouter>,
+    </BrowserRouter>
+  </ContactContextProvider>,
   document.getElementById('root')
 );

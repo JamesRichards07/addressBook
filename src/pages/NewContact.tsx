@@ -1,8 +1,12 @@
+import {useContext} from 'react';
 import {useHistory} from 'react-router-dom';
+
+import ContactContext from '../components/Contact-Context';
 import NewContactForm from '../components/contacts/NewContactForm';
 
 function NewContactPage(){
     const history = useHistory();
+    const contactCtx = useContext(ContactContext);
 
     function newContactHandler(newContactData: any){
         fetch(
@@ -16,6 +20,7 @@ function NewContactPage(){
             }
         )
         .then(() => {
+            contactCtx.replaceContact([]);
             history.replace("/")
         })
     };

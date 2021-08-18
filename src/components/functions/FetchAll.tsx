@@ -1,5 +1,4 @@
 function FetchAll(url: string, method: string, setIsLoading: any, setLoadedContacts: any){
-    console.log(url, method, setLoadedContacts,setIsLoading);
     const fetchResponse = (response:any) => {
         return (
             response.json()
