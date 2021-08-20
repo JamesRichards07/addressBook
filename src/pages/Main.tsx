@@ -10,7 +10,6 @@ function MainPage(){
     const [loadedContacts, setLoadedContacts] = useState([]);
 
     useEffect(() => {
-        console.log("use effect");
         setIsLoading(true);
         const url = 'https://avb-contacts-api.herokuapp.com/contacts/paginated';
 

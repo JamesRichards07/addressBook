@@ -6,7 +6,7 @@ import HomeItem from './HomeItem';
 
 function HomePage(props: any){
     const contactCtx = useContext(ContactContext);
-
+    
     let content; 
 
     if(contactCtx.contact.length === 0){
