@@ -1,75 +1,78 @@
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from 'react-router-dom';
 
 function NewContactForm(props: any){
-    // const [email, setEmail] = useState<string[]>([]);
-    // const [firstName, setFirstName] = useState<string>("");
-    // const [lastName, setLasttName] = useState<string>("");
+    const [emails, setEmails] = useState<string[]>([]);
+
     const firstNameInputRef = useRef<HTMLInputElement>(null);
     const lastNameInputRef = useRef<HTMLInputElement>(null);
-    // const emailsInputRef = useRef<HTMLInputElement>(null);
+    const emailInputRef = useRef<HTMLInputElement[]>([]);
+    // emailInputRef.current = [];
 
-    function submitHandler(event: React.FormEvent<HTMLFormElement>): void{
+    function submitContactHandler(event: React.FormEvent<HTMLFormElement>): void{
         event.preventDefault();
         
         const enteredFirstName = firstNameInputRef.current?.value;
         const enteredLastName = lastNameInputRef.current?.value;
-        // const enteredEmails = emailsInputRef.current?.value;
-        
-        const contactData: object ={
+        const enteredEmailList = [];
+
+        for(let i = 0; i < emails.length; i++){
+            // emailInputRef.current[i].value !== "" ? enteredEmailList.push(emailInputRef.current[i].value) : null
+            if(emailInputRef.current[i].value !== ""){
+                enteredEmailList.push(emailInputRef.current[i].value);
+            }   
+        }
+
+        const contactData: object = {
             firstName: enteredFirstName,
             lastName: enteredLastName,
-            // emails: enteredEmails,
+            emails: enteredEmailList,
         };
 
         props.onNewContact(contactData);
     }
         
-    
+    function AddEmail(){
+        setEmails([...emails, ""]);
+    }
+
+    function addToEmailInputRef(email: any){
+        if(email && !emailInputRef.current.includes(email)){
+            emailInputRef.current.push(email);
+        } 
+        console.log(emailInputRef.current);
+    }
+
     return(
-        <form onSubmit={submitHandler}>
+        <form onSubmit={submitContactHandler}>
             <div>
-                {/* {firstName}         */}
                 <label htmlFor="firstname"></label>
-                <input type="text" required id="firstname" ref={firstNameInputRef} 
+                <input type="text" required id="firstname" name="firstName" ref={firstNameInputRef} 
                     placeholder={"First Name"}
                 />
-                {/* {setFirstName(firstNameInputRef.current?.value)
-                        <div>
-                            <input type="text" required id="firstname" ref={firstNameInputRef} 
-                                placeholder={"Add first Name"}
-                            />
-                        </div> */}
             </div>
             <div>
                 <label htmlFor="lastname"></label>
-                <input type="text" required id="lastname" ref={lastNameInputRef} 
+                <input type="text" required id="lastname" name="LastName" ref={lastNameInputRef} 
                     placeholder={"Last Name"}
                 />
             </div>
-            {/* <div>
-                {email.map((p, index) => {
-                    return (
-                        <div>
-                            <input type="text" id="emails" ref={emailsInputRef}/>
-                        </div>          
+            <div>
+                {emails.map((email:any, i:any)=>{
+                    return(
+                        <div key={"email" + i}>
+                            <label htmlFor="email"></label>
+                            <input type="text" id={"email" + i} name={"email" + i} ref={addToEmailInputRef} 
+                                placeholder={"Email"}
+                            />
+                        </div>
                     )
                 })}
-                <button 
-                    onClick={() => {
-                        setEmail(currentEmail => [
-                            ...currentEmail, 
-                            ""
-                        ]);
-                    }}
-                >
-                    Add email
+                <button onClick={AddEmail} type="button">
+                    Add Email
                 </button>
-                <label htmlFor="emails"></label>
-                <input type="text" id="emails" ref={emailsInputRef}
-                    placeholder={"Email"} />
-            </div> */}
-            <div>
+            </div>
+            <div> 
                 <button>Save</button>
                 <Link to="/">Cancel</Link>
             </div>

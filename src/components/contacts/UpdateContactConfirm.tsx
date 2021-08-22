@@ -7,11 +7,14 @@ import ContactContext from "../Contact-Context";
 function UpdateContactConfirm(props: any){
     
     const contactCtx = useContext(ContactContext);
-    const contact = contactCtx.contact;
+    const content = contactCtx.contact;
+
+    console.log("content: " + JSON.stringify(content));
+    console.log("props: " + JSON.stringify(props));
 
     function submitConfirmHandler(event: React.FormEvent<HTMLFormElement>): void{
         event.preventDefault();
-        props.onContactUpdateConfirm(contact);
+        props.onContactUpdateConfirm(content);
     }
 
     return (

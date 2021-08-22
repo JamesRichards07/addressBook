@@ -9,6 +9,7 @@ function NewContactPage(){
     const contactCtx = useContext(ContactContext);
 
     function newContactHandler(newContactData: any){
+        // console.log(JSON.stringify(newContactData));
         fetch(
             'https://avb-contacts-api.herokuapp.com/contacts',
             {
