@@ -7,7 +7,6 @@ function NewContactForm(props: any){
     const firstNameInputRef = useRef<HTMLInputElement>(null);
     const lastNameInputRef = useRef<HTMLInputElement>(null);
     const emailInputRef = useRef<HTMLInputElement[]>([]);
-    // emailInputRef.current = [];
 
     function submitContactHandler(event: React.FormEvent<HTMLFormElement>): void{
         event.preventDefault();
@@ -17,7 +16,6 @@ function NewContactForm(props: any){
         const enteredEmailList = [];
 
         for(let i = 0; i < emails.length; i++){
-            // emailInputRef.current[i].value !== "" ? enteredEmailList.push(emailInputRef.current[i].value) : null
             if(emailInputRef.current[i].value !== ""){
                 enteredEmailList.push(emailInputRef.current[i].value);
             }   
@@ -40,7 +38,6 @@ function NewContactForm(props: any){
         if(email && !emailInputRef.current.includes(email)){
             emailInputRef.current.push(email);
         } 
-        console.log(emailInputRef.current);
     }
 
     return(
