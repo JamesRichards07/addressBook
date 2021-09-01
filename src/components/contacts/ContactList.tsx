@@ -1,7 +1,6 @@
 import ContactItem from './ContactItem';
 
 function ContactList(props:any){
-
     return (
         <ul>
             {props.contacts.map((contact:any) => {

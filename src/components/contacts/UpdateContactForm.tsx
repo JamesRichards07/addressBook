@@ -19,7 +19,7 @@ function UpdateContactForm(props: any){
         const currentFirstName = props.contactData.firstName;
         const currentLastName = props.contactData.lastName;
         const currentEmails = [...props.contactData.emails];
-        
+
         let updatedFirstName = "";
         let updatedLastName = "";
         let updatedEmails = [];
@@ -30,19 +30,16 @@ function UpdateContactForm(props: any){
         lastNameInputRef.current === null ?
             updatedLastName = currentLastName : updatedLastName = lastNameInputRef.current.value;
 
-        if(emailInputRef.current === []){
-            updatedEmails = currentEmails;
-        }
-        else{
-            currentEmails.map((email) => {
-                return addToEmailInputRef(email);
-            });
+        currentEmails.map((email: any) => {
+            return addToEmailInputRef(email);
+        });
 
-            for(let i = 0; i < emailInputRef.current.length; i++){
-                if(emailInputRef.current[i].value !== ""){
-                    updatedEmails.push(emailInputRef.current[i].value);
-                }   
-            }
+        console.log(emailInputRef.current);
+
+        for(let i = 0; i < emailInputRef.current.length; i++){
+            if(emailInputRef.current[i].value !== ""){
+                updatedEmails.push(emailInputRef.current[i].value);
+            }   
         }   
             
         const newContactData: object = {
@@ -104,13 +101,13 @@ function UpdateContactForm(props: any){
                         </div>
                     )
                 })}
-                <button onClick={AddEmail} type="button">
+                <button className="btn-new"onClick={AddEmail} type="button">
                     Add Email
                 </button>
             </div>
             <div>
-                <button>Save</button>
-                <Link to="/">Cancel</Link>
+                <button className="btn-sumbit">Save</button>
+                <Link className="btn-cancel" to="/">Cancel</Link>
             </div>
             </form>
         </section>

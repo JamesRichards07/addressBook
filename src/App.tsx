@@ -4,8 +4,8 @@ import { Switch, Route} from 'react-router-dom';
 import ContactsPage from './pages/Contacts';
 import NewContactPage from './pages/NewContact';
 import MainPage from './pages/Main';
-import DeleteContactPage from './pages/DeleteContact';
 import UpdateContactPage from './pages/UpdateContact';
+import DeleteContactPage from './pages/DeleteContact';
 
 function App() {
   return (
@@ -14,18 +14,13 @@ function App() {
       <Route path='/' exact>
         <MainPage/>
       </Route>
-      <Route path='/contacts' exact>
-        <MainPage/>
-      </Route>
-      <Route path='/contacts/edit/newContact' exact>
-        <ContactsPage/>
-        <NewContactPage/>
-      </Route>
-      <Route path='/contacts/edit/deleteContact' exact>
-        <ContactsPage/>
+      <Route path='/edit/deleteContact' exact>
         <DeleteContactPage/>
       </Route>
-      <Route path='/contacts/edit/updateContact' exact>
+      <Route path='/edit/newContact' exact>
+        <NewContactPage/>
+      </Route>
+      <Route path='/edit/updateContact' exact>
         <ContactsPage/>
         <UpdateContactPage/>
       </Route>

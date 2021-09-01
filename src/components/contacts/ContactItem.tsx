@@ -1,5 +1,4 @@
 import {useContext} from 'react';
-
 import { useHistory } from 'react-router-dom';
 
 import ContactContext from '../Contact-Context';
@@ -9,8 +8,8 @@ function ContactItem(props:any){
     const history = useHistory();
     
     function SelectedContactHandler(props:any){
+        history.replace("/");
         contactCtx.replaceContact(props);
-        history.replace('/contacts');
     }
 
     return(

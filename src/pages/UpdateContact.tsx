@@ -14,8 +14,6 @@ function UpdateContact(props: any){
         const id = updateContactData.id;
         const url = 'https://avb-contacts-api.herokuapp.com/contacts/' + id;
 
-        console.log("updateContactData: " + JSON.stringify(updateContactData));
-
         fetch(
             url, 
             {

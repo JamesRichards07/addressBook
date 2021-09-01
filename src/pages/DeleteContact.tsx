@@ -1,35 +1,34 @@
-import {useContext} from 'react';
+import {useState, useContext} from 'react';
 import { useHistory } from 'react-router-dom';
 
+import Main from '../pages/Main';
+import Modal from '../components/Modal';
+import Backdrop from '../components/Backdrop';
 import ContactContext from '../components/Contact-Context';
-import DeleteContactForm from '../components/contacts/DeleteContactForm';
 
-function DeleteContactPage(props: any){
+function DeleteContactPage(){
+    const [modalIsOpen, setModalIsOpen] = useState(true);
     const history = useHistory();
     const contactCtx = useContext(ContactContext);
 
-    function DeleteContactHandler(deleteContactData:any){
-        const id = deleteContactData.id;
-        const url = 'https://avb-contacts-api.herokuapp.com/contacts/' + id;
+    const content = contactCtx.contact;
 
-        fetch(
-            url, 
-            {
-                method:"DELETE"
-            }
-        )
-        .then(() => {
-            contactCtx.replaceContact([]);
-            history.replace("/")
-        })
-    } 
+    function closeModalHandler(){
+        setModalIsOpen(false);
+        history.replace("/");
+    }
 
     return(
         <section>
-            <h1>Are you sure?</h1>
-            <DeleteContactForm onContactDeletion={DeleteContactHandler}/>
+            <div>
+                <Main/>
+                <div>
+                { modalIsOpen && <Modal contactData={content} onCancel={closeModalHandler}/>}
+                { modalIsOpen && <Backdrop onCancel={closeModalHandler}/>}
+                </div>
+            </div>
         </section>
     );
-}
+};
 
 export default DeleteContactPage;

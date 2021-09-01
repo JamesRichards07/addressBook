@@ -3,6 +3,7 @@ import {useHistory} from 'react-router-dom';
 
 import ContactContext from '../components/Contact-Context';
 import NewContactForm from '../components/contacts/NewContactForm';
+import Contacts from './Contacts';
 
 function NewContactPage(){
     const history = useHistory();
@@ -21,14 +22,21 @@ function NewContactPage(){
         )
         .then(() => {
             contactCtx.replaceContact([]);
-            history.replace("/")
+            history.replace("/");
         })
     };
 
     return (
-        <section>
-            <h1>New Contact</h1>
-            <NewContactForm onNewContact={newContactHandler} />
+        <section className="relative">
+            <div className="md:flex">
+                <div>
+                    <Contacts/>
+                </div>
+                <div className="fixed left-44 right-0 p-10 space-y-20">
+                    <h1 className="text-center">New Contact</h1>
+                    <NewContactForm onNewContact={newContactHandler} />
+                </div>
+            </div>
         </section>
     );
 }
