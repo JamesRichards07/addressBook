@@ -1,7 +1,6 @@
 import React from 'react';
 import { Switch, Route} from 'react-router-dom';
 
-import ContactsPage from './pages/Contacts';
 import NewContactPage from './pages/NewContact';
 import MainPage from './pages/Main';
 import UpdateContactPage from './pages/UpdateContact';
@@ -21,7 +20,6 @@ function App() {
         <NewContactPage/>
       </Route>
       <Route path='/edit/updateContact' exact>
-        <ContactsPage/>
         <UpdateContactPage/>
       </Route>
       </Switch>

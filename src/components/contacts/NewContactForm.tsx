@@ -42,14 +42,14 @@ function NewContactForm(props: any){
 
     return(
         <form onSubmit={submitContactHandler} className="">
-            <div className="">
-                <div className="">
-                    <div className="">
-                        <div className="flex text-xs xl:space-x-96 xl:pl-80 lg:pl-44 lg:space-x-80 md:space-x-48 md:pl-36 sm:space-x-40">
+            <div>
+                <div>
+                    <div>
+                        <div className="flex text-xs xl:space-x-80 xl:pl-80 lg:pl-44 lg:space-x-80 md:space-x-48 md:pl-36 sm:space-x-40">
                             <h3>* First name</h3>
                             <h3>* Last name</h3>
                         </div>
-                        <div className="flex pb-10 xl:space-x-56 xl:pl-80 lg:pl-44 lg:space-x-40 lg:pl-32 md:space-x-10 md:pl-36 space-x-10">
+                        <div className="flex pb-10 xl:space-x-52 xl:pl-80 lg:pl-44 lg:space-x-40 lg:pl-32 md:space-x-10 md:pl-36 space-x-10">
                             <div className="bg-blue-100 border-solid border-2 border-blue-200">
                                 <label htmlFor="firstname"></label>
                                 <input className="pr-12 sm:pr-3" type="text" required id="firstname" name="firstName" 
@@ -73,7 +73,7 @@ function NewContactForm(props: any){
                                 return(
                                     <div key={"email" + i}>
                                         <label htmlFor="email"></label>
-                                            <input className="border-solid border-2 border-blue-200 pr-12" 
+                                            <input className="border-solid border-2 border-blue-200 pr-3" 
                                             type="text" id={"email" + i} name={"email" + i} ref={addToEmailInputRef} 
                                         />
                                     </div>

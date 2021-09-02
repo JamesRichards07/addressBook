@@ -4,6 +4,7 @@ import {useContext} from 'react';
 
 import ContactContext from '../components/Contact-Context';
 import UpdateContactForm from '../components/contacts/UpdateContactForm';
+import Contacts from './Contacts';
 
 function UpdateContact(props: any){
     const history = useHistory();
@@ -31,8 +32,16 @@ function UpdateContact(props: any){
     } 
 
     return(
-        <section>
-            <UpdateContactForm contactData={content} onContactUpdate={UpdateContactHandler}/>
+        <section className="relative">
+            <div className="md:flex">
+                <div>
+                    <Contacts/>
+                </div>
+                <div className="fixed left-44 right-0 p-10 space-y-20">
+                    <h1 className="text-center">Update Contact</h1>
+                    <UpdateContactForm contactData={content} onContactUpdate={UpdateContactHandler}/>
+                </div>
+            </div>
         </section>
     );
 }
