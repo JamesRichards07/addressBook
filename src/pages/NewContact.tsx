@@ -1,7 +1,7 @@
 import {useContext} from 'react';
 import {useHistory} from 'react-router-dom';
 
-import ContactContext from '../components/Contact-Context';
+import ContactContext from '../components/ContactContext';
 import NewContactForm from '../components/contacts/NewContactForm';
 import Contacts from './Contacts';
 

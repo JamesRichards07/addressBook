@@ -5,7 +5,6 @@ import ContactList from '../components/contacts/ContactList';
 import FetchAll from '../components/functions/FetchAll';
 
 function ContactPage(){
-    console.log("Contacts");
     const [isLoading, setIsLoading] = useState(true);
     const [loadedContacts, setLoadedContacts] = useState([]);
 

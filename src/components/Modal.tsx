@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import ContactContext from './Contact-Context';
+import ContactContext from './ContactContext';
 
 function Modal(props:any){
     const history = useHistory();

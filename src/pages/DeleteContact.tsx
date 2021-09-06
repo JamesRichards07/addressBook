@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import Main from '../pages/Main';
 import Modal from '../components/Modal';
 import Backdrop from '../components/Backdrop';
-import ContactContext from '../components/Contact-Context';
+import ContactContext from '../components/ContactContext';
 
 function DeleteContactPage(){
     const [modalIsOpen, setModalIsOpen] = useState(true);

@@ -2,7 +2,7 @@
 import { useHistory } from 'react-router-dom';
 import {useContext} from 'react';
 
-import ContactContext from '../components/Contact-Context';
+import ContactContext from '../components/ContactContext';
 import UpdateContactForm from '../components/contacts/UpdateContactForm';
 import Contacts from './Contacts';
 

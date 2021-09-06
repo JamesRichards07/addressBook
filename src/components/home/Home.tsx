@@ -1,6 +1,6 @@
 import {useContext} from 'react';
 
-import ContactContext from '../Contact-Context';
+import ContactContext from '../ContactContext';
 import HomeItem from './HomeItem';
 
 function HomePage(props: any){
@@ -9,8 +9,8 @@ function HomePage(props: any){
     let content; 
 
     if(contactCtx.contact.length === 0){
-        content = <HomeItem contact={props.firstContact[0]}/>;
-        contactCtx.replaceContact(props.firstContact[0]);
+        content = <HomeItem contact={props.firstContact}/>;
+        contactCtx.replaceContact(props.firstContact);
     }
     else{ 
         content = <HomeItem contact={contactCtx.contact}/>

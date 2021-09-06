@@ -4,7 +4,7 @@ import {BrowserRouter} from 'react-router-dom';
 
 import App from './App';
 import './index.css';
-import {ContactContextProvider} from './components/Contact-Context';
+import {ContactContextProvider} from './components/ContactContext';
 
 ReactDOM.render(
   <ContactContextProvider>

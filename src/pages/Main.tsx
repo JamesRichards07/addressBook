@@ -6,7 +6,6 @@ import FetchAll from '../components/functions/FetchAll';
 import Home from '../components/home/Home';
 
 function MainPage(){
-    console.log("Main");
     const [isLoading, setIsLoading] = useState(true);
     const [loadedContacts, setLoadedContacts] = useState([]);
 
@@ -47,7 +46,7 @@ function MainPage(){
                         </div>
                         <div className="fixed left-44 right-0 p-10">
                             <div>
-                                <Home firstContact={loadedContacts}/>
+                                <Home firstContact={loadedContacts[0]}/>
                             </div>
                             <div className="text-center object-bottom pt-10">
                                 <Link className="text-red-600" to="/edit/DeleteContact">
