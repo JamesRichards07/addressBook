@@ -10,16 +10,16 @@ function App() {
   return (
     <div>
       <Switch>
-      <Route path='/' exact>
+      <Route path='/addressBook' exact>
         <MainPage/>
       </Route>
-      <Route path='/edit/deleteContact' exact>
+      <Route path='/addressBook/edit/deleteContact' exact>
         <DeleteContactPage/>
       </Route>
-      <Route path='/edit/newContact' exact>
+      <Route path='/addressBook/edit/newContact' exact>
         <NewContactPage/>
       </Route>
-      <Route path='/edit/updateContact' exact>
+      <Route path='/addressBook/edit/updateContact' exact>
         <UpdateContactPage/>
       </Route>
       </Switch>
