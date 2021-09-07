@@ -88,7 +88,7 @@ function NewContactForm(props: any){
                     </div>
                 </div>
                 <div className="xl:space-x-60 xl:pl-96 lg:pl-64 lg:space-x-56 md:pl-48 md:space-x-36 sm:pl-14 sm:space-x-32"> 
-                    <Link className="border-2 border-gray-300 px-6 py-2 rounded text-yellow-600" to="/">Cancel</Link>
+                    <Link className="border-2 border-gray-300 px-6 py-2 rounded text-yellow-600" to="/addressBook">Cancel</Link>
                     <button className="bg-green-600 px-2 py-1 text-white text-left rounded">Save</button>
                 </div>
             </div>

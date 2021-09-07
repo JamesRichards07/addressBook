@@ -18,7 +18,7 @@ function Modal(props:any){
             }
         )
         .then(()=> {
-            history.replace("/");
+            history.replace("/addressBook");
             contactCtx.replaceContact([]);
         })
     }

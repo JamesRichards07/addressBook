@@ -8,7 +8,7 @@ function ContactItem(props:any){
     const history = useHistory();
     
     function SelectedContactHandler(props:any){
-        history.replace("/");
+        history.replace("/addressBook");
         contactCtx.replaceContact(props);
     }
 

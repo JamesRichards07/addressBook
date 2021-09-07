@@ -17,7 +17,7 @@ function HomeItem(props:any){
                     <div>
                         <h3>Email:</h3>
                         {props.contact.emails !== undefined ? props.contact.emails.map((email: any) => {
-                            return (<h3 className="">{email}</h3>)}) : null}
+                            return (<h3>{email}</h3>)}) : null}
                     </div>
                 </div>
         </section>

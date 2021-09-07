@@ -27,7 +27,7 @@ function UpdateContact(props: any){
         )
         .then(() => {
             contactCtx.replaceContact([]);
-            history.replace("/")
+            history.replace("/addressBook")
         })
     } 
 

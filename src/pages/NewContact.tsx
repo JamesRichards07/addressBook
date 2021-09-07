@@ -22,7 +22,7 @@ function NewContactPage(){
         )
         .then(() => {
             contactCtx.replaceContact([]);
-            history.replace("/");
+            history.replace("/addressBook");
         })
     };
 

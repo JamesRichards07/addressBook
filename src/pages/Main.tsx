@@ -40,7 +40,7 @@ function MainPage(){
                     </div>
                     <div className="fixed left-44 right-0 p-10">
                         <div className="text-sm text-right text-blue-400 pt-10 pr-10">
-                            <Link to="/edit/updateContact">
+                            <Link to="/addressBook/edit/updateContact">
                                 Edit
                             </Link>
                         </div>
@@ -49,7 +49,7 @@ function MainPage(){
                                 <Home firstContact={loadedContacts[0]}/>
                             </div>
                             <div className="text-center object-bottom pt-10">
-                                <Link className="text-red-600" to="/edit/DeleteContact">
+                                <Link className="text-red-600" to="/addressBook/edit/DeleteContact">
                                     Delete
                                 </Link>
                             </div>

@@ -15,7 +15,7 @@ function DeleteContactPage(){
 
     function closeModalHandler(){
         setModalIsOpen(false);
-        history.replace("/");
+        history.replace("/addressBook");
     }
 
     return(
