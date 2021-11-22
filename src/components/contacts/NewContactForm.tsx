@@ -41,7 +41,7 @@ function NewContactForm(props: any){
     }
 
     return(
-        <form onSubmit={submitContactHandler} className="">
+        <form onSubmit={submitContactHandler}>
             <div>
                 <div>
                     <div>
