@@ -1,4 +1,4 @@
-> While this repor still works, it should be consider abandoned and is not intended for professional or personal use. This project was created as a coding challenge to learn React and improve my skills in Typescript.
+> While this repo still works, it should be consider abandoned and is not intended for professional or personal use. This project was created as a coding challenge to learn React and improve my skills in Typescript.
 
 # Address Book
 Frontend app to manage contact information. 
